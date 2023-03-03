@@ -7,7 +7,9 @@
 	$: console.log(products);
 </script>
 
-<h2>Products</h2>
+{data.user.name}
+
+<h2>{data.title}</h2>
 
 {#if products && products.length}
 	<ul>
