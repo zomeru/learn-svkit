@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { invalidate } from '$app/navigation';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
@@ -7,10 +8,15 @@
 	$: console.log(products);
 </script>
 
-{data.user.name}
-
 <h2>{data.title}</h2>
-
+<button
+	on:click={() => {
+		// invalidate('app:products');
+		invalidate((url) => {
+			console.log(url);
+		});
+	}}>Re-run load fucntion</button
+>
 {#if products && products.length}
 	<ul>
 		{#each products as product}
