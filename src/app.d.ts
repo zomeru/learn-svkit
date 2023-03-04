@@ -4,8 +4,15 @@
 // for information about these interfaces
 declare global {
 	namespace App {
-		// interface Error {}
-		// interface Locals {}
+		interface Error {
+			code?: string;
+		}
+		interface Locals {
+			user?: {
+				name: string;
+				id: number;
+			};
+		}
 		// interface PageData {}
 		// interface Platform {}
 	}

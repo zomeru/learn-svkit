@@ -17,11 +17,11 @@
 	{/if}
 </svelte:head>
 
-<nav>
+<nav data-sveltekit-preload-data="hover">
 	<a href="/">Home</a>
 	<a href="/products">Products</a>
 	{#if !data.user}
-		<a href="/login">Log in</a>
+		<a href="/login" data-sveltekit-preload-data="off">Log in</a>
 	{:else}
 		<button
 			on:click={async () => {

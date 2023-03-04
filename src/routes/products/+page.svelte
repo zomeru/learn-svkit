@@ -5,16 +5,16 @@
 	export let data: PageData;
 
 	$: products = data.products.products;
-	$: console.log(products);
+	// $: console.log(products);
 </script>
 
 <h2>{data.title}</h2>
 <button
 	on:click={() => {
-		// invalidate('app:products');
-		invalidate((url) => {
-			console.log(url);
-		});
+		invalidate('app:products');
+		// invalidate((url) => {
+		// 	console.log(url);
+		// });
 	}}>Re-run load fucntion</button
 >
 {#if products && products.length}
